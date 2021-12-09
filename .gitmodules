@@ -1,0 +1,6 @@
+[submodule "utils/gnl"]
+	path = utils/gnl
+	url = git@github.com:SuperDulli/get_next_line.git
+[submodule "utils/libft"]
+	path = utils/libft
+	url = git@github.com:SuperDulli/libft.git
