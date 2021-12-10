@@ -6,15 +6,15 @@
 #    By: chelmerd <chelmerd@student.wolfsburg.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/03 10:55:50 by chelmerd          #+#    #+#              #
-#    Updated: 2021/12/09 15:03:03 by chelmerd         ###   ########.fr        #
+#    Updated: 2021/12/09 15:47:25 by chelmerd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-BUFFER_SIZE = 20
+BUFFER_SIZE = 1024
 CFLAGS = -Wall -Wextra -Werror -g
-NAME = dive
-SRCS = dive.c
+NAME = fish
+SRCS = fish.c
 
 LIBFT_FOLDER= ../utils/libft
 LIBFT_NAME	= libft.a
@@ -44,9 +44,11 @@ $(GNL_OBJS): $(GNL_SRCS) $(GNL_FOLDER)/get_next_line.h
 
 clean:
 	rm -f *.o
+	make clean -C $(LIBFT_FOLDER)
 
 fclean: clean
 	rm -f $(NAME)
+	make fclean -C $(LIBFT_FOLDER)
 
 re: fclean all
 
